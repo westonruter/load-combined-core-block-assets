@@ -19,6 +19,8 @@ If running a classic theme (i.e. not a block theme), it filters `should_load_sep
 
 Note that this plugin should be considered temporary until any issues are resolved in 6.9.1. At any time, you can test whether any issues remain by adding `?should_load_separate_core_block_assets=true` to any frontend URL; this restores the default behavior in WP 6.9. 
 
+This workaround is temporary because there are performance benefits to loading separate core block assets. They can be loaded on demand just when they are used, as opposed to loading the large single combined `wp-block-library` stylesheet. Loading separate block styles on demand reduces the amount of CSS which should improve page load time.
+
 ## Installation
 
 ### Automatic
