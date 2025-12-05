@@ -1,5 +1,5 @@
 {
-	"name": "wp-plugin-template",
+	"name": "load-combined-core-block-assets",
 	"version": "0.1.0",
 	"description": "Yet another boilerplate/template for creating WordPress plugins.",
 	"private": true,
@@ -10,9 +10,9 @@
 		"wordpress-plugin"
 	],
 	"prettier": "@wordpress/prettier-config",
-	"homepage": "https://github.com/westonruter/wp-plugin-template",
-	"repository": "https://github.com/westonruter/wp-plugin-template",
-	"bugs": "https://github.com/westonruter/wp-plugin-template/issues",
+	"homepage": "https://github.com/westonruter/load-combined-core-block-assets",
+	"repository": "https://github.com/westonruter/load-combined-core-block-assets",
+	"bugs": "https://github.com/westonruter/load-combined-core-block-assets/issues",
 	"devDependencies": {
 		"@wordpress/scripts": "*",
 		"husky": "^9",
@@ -36,7 +36,7 @@
 		"lint:php:fix": "composer phpcbf",
 		"packages-update": "wp-scripts packages-update",
 		"lint:pkg-json": "wp-scripts lint-pkg-json . --ignorePath .gitignore",
-		"plugin-zip": "npm run transform-readme && git archive --format=zip --output=wp-plugin-template.zip --add-file readme.txt HEAD && zip wp-plugin-template.zip -d README.md",
+		"plugin-zip": "npm run transform-readme && git archive --format=zip --output=load-combined-core-block-assets.zip --add-file readme.txt HEAD && zip load-combined-core-block-assets.zip -d README.md",
 		"prepare": "husky",
 		"transform-readme": "php tools/transform-readme.php",
 		"verify-version-consistency": "php tools/verify-version-consistency.php"

@@ -1,15 +1,15 @@
 <?php
 /**
- * WP Plugin Template Plugin for WordPress
+ * Load Combined Core Block Assets Plugin for WordPress
  *
- * @package   WPPluginTemplate
+ * @package   LoadCombinedCoreBlockAssets
  * @author    Weston Ruter
  * @license   GPL-2.0-or-later
  * @copyright Copyleft 2025, Weston Ruter
  *
  * @wordpress-plugin
- * Plugin Name: WP Plugin Template
- * Plugin URI: https://github.com/westonruter/wp-plugin-template
+ * Plugin Name: Load Combined Core Block Assets
+ * Plugin URI: https://github.com/westonruter/load-combined-core-block-assets
  * Description: ...
  * Requires at least: 6.8
  * Requires PHP: 8.1
@@ -18,12 +18,12 @@
  * Author URI: https://weston.ruter.net/
  * License: GPLv2 or later
  * License URI: https://www.gnu.org/licenses/old-licenses/gpl-2.0.html
- * Update URI: https://github.com/westonruter/wp-plugin-template
- * GitHub Plugin URI: https://github.com/westonruter/wp-plugin-template
+ * Update URI: https://github.com/westonruter/load-combined-core-block-assets
+ * GitHub Plugin URI: https://github.com/westonruter/load-combined-core-block-assets
  * Primary Branch: main
  */
 
-namespace WPPluginTemplate;
+namespace LoadCombinedCoreBlockAssets;
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // @codeCoverageIgnore
