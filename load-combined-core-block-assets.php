@@ -32,32 +32,50 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * Plugin version.
  *
+ * @since 0.1.0
  * @var string
  */
 const VERSION = '0.1.0';
 
-add_action(
-	'after_setup_theme',
-	static function () { // phpcs:ignore SlevomatCodingStandard.TypeHints.ReturnTypeHint
-		if ( wp_is_block_theme() ) {
-			return;
-		}
-		add_filter(
-			'should_load_separate_core_block_assets',
-			static function (): bool {
-				if ( ! isset( $_GET['should_load_separate_core_block_assets'] ) || ! is_string( $_GET['should_load_separate_core_block_assets'] ) ) { // phpcs:ignore WordPress.Security.NonceVerification.Recommended
-					return false;
-				}
-
-				return rest_sanitize_boolean( $_GET['should_load_separate_core_block_assets'] ); // phpcs:ignore WordPress.Security.NonceVerification.Recommended
-			},
-			PHP_INT_MAX
-		);
+/**
+ * Inits plugin.
+ *
+ * @since 0.1.0
+ *
+ * @return void
+ */
+function init() { // phpcs:ignore SlevomatCodingStandard.TypeHints.ReturnTypeHint
+	if ( wp_is_block_theme() ) {
+		return;
 	}
-);
+	add_filter(
+		'should_load_separate_core_block_assets',
+		__NAMESPACE__ . '\filter_should_load_separate_core_block_assets',
+		PHP_INT_MAX
+	);
+}
+
+add_action( 'after_setup_theme', __NAMESPACE__ . '\init' );
+
+/**
+ * Filters should_load_separate_core_block_assets.
+ *
+ * @since 0.1.0
+ *
+ * @return bool Whether should_load_separate_core_block_assets is enabled.
+ */
+function filter_should_load_separate_core_block_assets(): bool {
+	if ( ! isset( $_GET['should_load_separate_core_block_assets'] ) || ! is_string( $_GET['should_load_separate_core_block_assets'] ) ) { // phpcs:ignore WordPress.Security.NonceVerification.Recommended
+		return false;
+	}
+
+	return rest_sanitize_boolean( $_GET['should_load_separate_core_block_assets'] ); // phpcs:ignore WordPress.Security.NonceVerification.Recommended
+}
 
 /**
  * Filters the HTML link tag of an enqueued style.
+ *
+ * @since 0.1.0
  *
  * @param string|mixed $tag    The link tag for the enqueued style.
  * @param string       $handle The style's registered handle.
