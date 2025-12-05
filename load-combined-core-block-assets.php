@@ -55,3 +55,29 @@ add_action(
 		);
 	}
 );
+
+/**
+ * Filters the HTML link tag of an enqueued style.
+ *
+ * @param string|mixed $tag    The link tag for the enqueued style.
+ * @param string       $handle The style's registered handle.
+ */
+function filter_style_loader_tag( $tag, string $handle ): string {
+	if ( ! is_string( $tag ) ) {
+		return '';
+	}
+	if ( 'wp-block-library' === $handle && ! wp_should_load_separate_core_block_assets() ) {
+		$comment = sprintf(
+			/* translators: 1: wp-block-library, 2: should_load_separate_core_block_assets, 3: ?should_load_separate_core_block_assets=true */
+			__( 'Note: This combined block library stylesheet (%1$s) is used instead of loading separate core block styles because the %2$s filter is returning false. Try loading the URL with %3$s to restore being able to load block styles on demand and see if there are any issues remaining.', 'load-combined-core-block-assets' ),
+			'wp-block-library',
+			'should_load_separate_core_block_assets',
+			'?should_load_separate_core_block_assets=true'
+		);
+
+		$tag = sprintf( "\n<!-- %s -->\n%s", $comment, $tag );
+	}
+	return $tag;
+}
+
+add_filter( 'style_loader_tag', __NAMESPACE__ . '\filter_style_loader_tag', 10, 2 );
