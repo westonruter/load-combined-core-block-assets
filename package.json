@@ -1,7 +1,7 @@
 {
 	"name": "load-combined-core-block-assets",
 	"version": "0.1.0",
-	"description": "Yet another boilerplate/template for creating WordPress plugins.",
+	"description": "Temporary workaround for sites experiencing issues with WordPress 6.9's new ability to load block styles on demand in classic themes.",
 	"private": true,
 	"author": "Weston Ruter",
 	"license": "GPL-2.0-or-later",

@@ -1,6 +1,6 @@
 {
 	"name": "westonruter/load-combined-core-block-assets",
-	"description": "Just another WordPress plugin",
+	"description": "Temporary workaround for sites experiencing issues with WordPress 6.9's new ability to load block styles on demand in classic themes.",
 	"license": "GPL-2.0-or-later",
 	"type": "wordpress-plugin",
 	"require": {
