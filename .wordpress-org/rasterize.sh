@@ -29,10 +29,14 @@ for size in 128 256; do
 	rasterize "$size" "$size" "icon-${size}x${size}.png" "icon.svg"
 done
 
-for size in 772x250 1544x500; do
-	width=${size%x*}
-	height=${size#*x}
-	rasterize "$width" "$height" "banner-${size}.png" "banner.svg"
-done
+if [ -e "banner.svg" ]; then
+	for size in 772x250 1544x500; do
+		width=${size%x*}
+		height=${size#*x}
+		rasterize "$width" "$height" "banner-${size}.png" "banner.svg"
+	done
+fi
 
-rasterize 1280 640 "banner-github.png" "banner-github.svg"
+if [ -e "banner-github.svg" ]; then
+	rasterize 1280 640 "banner-github.png" "banner-github.svg"
+fi
