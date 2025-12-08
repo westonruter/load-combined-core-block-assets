@@ -92,7 +92,7 @@ function filter_style_loader_tag( $tag, string $handle ): string {
 			'?should_load_separate_core_block_assets=true'
 		);
 
-		$tag = sprintf( "\n<!-- %s -->\n%s", $comment, $tag );
+		$tag = sprintf( "\n<!-- %s -->\n%s", esc_html( $comment ), $tag );
 	}
 	return $tag;
 }
