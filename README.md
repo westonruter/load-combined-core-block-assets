@@ -1,8 +1,5 @@
 # Load Combined Core Block Assets
 
-<!-- markdownlint-disable-next-line no-inline-html -->
-<img src=".wordpress-org/banner.svg" alt="Banner for the Load Combined Core Block Assets plugin" width="1544" height="500">
-
 Temporary workaround for sites experiencing issues with WordPress 6.9's new ability to load block styles on demand in classic themes.
 
 **Contributors:** [westonruter](https://profile.wordpress.org/westonruter)  
@@ -13,7 +10,7 @@ Temporary workaround for sites experiencing issues with WordPress 6.9's new abil
 
 ## Description
 
-This is a temporary workaround for sites experiencing issues with WordPress 6.9's new ability to [load block styles on demand in classic themes](https://make.wordpress.org/core/2025/11/18/wordpress-6-9-frontend-performance-field-guide/#load-block-styles-on-demand-in-classic-themes).
+This is a temporary workaround for sites experiencing any issues with WordPress 6.9's new ability to [load block styles on demand in classic themes](https://make.wordpress.org/core/2025/11/18/wordpress-6-9-frontend-performance-field-guide/#load-block-styles-on-demand-in-classic-themes), for example [#64354](https://core.trac.wordpress.org/ticket/64354).
 
 If running a classic theme (i.e. not a block theme), it filters `should_load_separate_core_block_assets` to be `false`. This has the effect of reverting a change introduced in 6.9 where classic themes now load separate core block assets on demand by default.
 
