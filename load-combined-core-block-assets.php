@@ -11,7 +11,7 @@
  * Plugin Name: Load Combined Core Block Assets
  * Plugin URI: https://github.com/westonruter/load-combined-core-block-assets
  * Description: Temporary workaround for sites experiencing issues with WordPress 6.9's new ability to <a href="https://make.wordpress.org/core/2025/11/18/wordpress-6-9-frontend-performance-field-guide/#load-block-styles-on-demand-in-classic-themes">load block styles on demand in classic themes</a>.
- * Requires at least: 6.8
+ * Requires at least: 6.9
  * Requires PHP: 7.2
  * Version: 0.1.0
  * Author: Weston Ruter
