@@ -10,7 +10,7 @@ Workaround for sites experiencing issues with WordPress 6.9's changed default be
 
 ## Description
 
-This is a workaround for sites experiencing any issues with ability introduced in WordPress 6.9 to [load block styles on demand in classic themes](https://make.wordpress.org/core/2025/11/18/wordpress-6-9-frontend-performance-field-guide/#load-block-styles-on-demand-in-classic-themes). The known issues have been fixed during the 7.0 release release cycle with the following commits:
+This is a workaround for sites experiencing any issues with the ability introduced in WordPress 6.9 to [load block styles on demand in classic themes](https://make.wordpress.org/core/2025/11/18/wordpress-6-9-frontend-performance-field-guide/#load-block-styles-on-demand-in-classic-themes). The known issues have been fixed during the 7.0 release cycle with the following commits:
 
 * [r61076](https://core.trac.wordpress.org/changeset/61076): Script Loader: Fall back to hoisting late-printed styles to end of HEAD if wp-block-library is not enqueued.
 * [r61122](https://core.trac.wordpress.org/changeset/61122): Script Loader: Load block styles on demand in classic themes even when wp-block-styles support is absent.
