@@ -5,7 +5,7 @@ Workaround for sites experiencing issues with WordPress 6.9's changed default be
 **Contributors:** [westonruter](https://profile.wordpress.org/westonruter)  
 **Tags:**         performance  
 **Tested up to:** 7.0  
-**Stable tag:**   1.0.0  
+**Stable tag:**   1.1.0  
 **License:**      [GPLv2 or later](https://www.gnu.org/licenses/old-licenses/gpl-2.0.html)
 
 ## Description
@@ -43,6 +43,10 @@ You may also install and update via [Git Updater](https://git-updater.com/) usin
 5. Click the **Activate Plugin** button.
 
 ## Changelog
+
+### 1.1.0
+
+* Add inline admin notice with plugin row on WordPress 7.0+ to encourage re-evaluating whether still necessary.
 
 ### 1.0.0
 
