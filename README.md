@@ -46,7 +46,7 @@ You may also install and update via [Git Updater](https://git-updater.com/) usin
 
 ### 1.1.0
 
-* Add inline admin notice with plugin row on WordPress 7.0+ to encourage re-evaluating whether still necessary.
+* Add an inline admin notice in the plugin list table row on WordPress 7.0+ to encourage re-evaluating whether the plugin is still necessary.
 
 ### 1.0.0
 
