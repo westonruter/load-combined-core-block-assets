@@ -98,3 +98,49 @@ function filter_style_loader_tag( $tag, string $handle ): string {
 }
 
 add_filter( 'style_loader_tag', __NAMESPACE__ . '\filter_style_loader_tag', 10, 2 );
+
+/**
+ * Prints an inline info notice in the plugin's row on the Plugins screen.
+ *
+ * Since this plugin is intended to be a temporary workaround while the known
+ * issues are ironed out during the 7.0 release cycle, this notice encourages
+ * users to verify whether anything is still broken with the default 6.9
+ * behavior and where to report any remaining issues. The notice is only shown
+ * on WordPress 7.0-RC1 or later, by which point the known issues are fixed.
+ *
+ * @since 1.1.0
+ *
+ * @param string $plugin_file Plugin file path relative to the plugins directory.
+ *
+ * @return void
+ */
+function print_plugin_row_notice( string $plugin_file ) { // phpcs:ignore SlevomatCodingStandard.TypeHints.ReturnTypeHint
+	if ( plugin_basename( __FILE__ ) !== $plugin_file ) {
+		return;
+	}
+
+	if ( version_compare( wp_get_wp_version(), '7.0-RC1', '<' ) ) {
+		return;
+	}
+
+	$test_url    = add_query_arg( 'should_load_separate_core_block_assets', 'true', home_url( '/' ) );
+	$support_url = 'https://wordpress.org/support/plugin/load-combined-core-block-assets/';
+
+	$message = sprintf(
+		/* translators: 1: URL to the site homepage with the query parameter, 2: ?should_load_separate_core_block_assets=true, 3: URL to the support forum */
+		__( 'This plugin is intended to be a temporary workaround while issues are ironed out during the WordPress 7.0 release cycle. Now that the known issues are fixed, please <a href="%1$s">visit your site</a> with <code>%2$s</code> appended to the URL to check whether anything is still amiss without this workaround. If you still experience issues, please <a href="%3$s" target="_blank" rel="noopener">open a topic on the support forum</a>.', 'load-combined-core-block-assets' ),
+		esc_url( $test_url ),
+		'?should_load_separate_core_block_assets=true',
+		esc_url( $support_url )
+	);
+
+	wp_admin_notice(
+		wp_kses_post( $message ),
+		array(
+			'type'               => 'info',
+			'additional_classes' => array( 'inline' ),
+		)
+	);
+}
+
+add_action( 'after_plugin_row_meta', __NAMESPACE__ . '\print_plugin_row_notice' );
