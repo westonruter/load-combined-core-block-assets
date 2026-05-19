@@ -40,10 +40,8 @@ const VERSION = '1.1.0';
  * Inits plugin.
  *
  * @since 0.1.0
- *
- * @return void
  */
-function init() { // phpcs:ignore SlevomatCodingStandard.TypeHints.ReturnTypeHint
+function init(): void {
 	if ( wp_is_block_theme() ) {
 		return;
 	}
@@ -111,10 +109,8 @@ add_filter( 'style_loader_tag', __NAMESPACE__ . '\filter_style_loader_tag', 10, 
  * @since 1.1.0
  *
  * @param string $plugin_file Plugin file path relative to the plugins directory.
- *
- * @return void
  */
-function print_plugin_row_notice( string $plugin_file ) { // phpcs:ignore SlevomatCodingStandard.TypeHints.ReturnTypeHint
+function print_plugin_row_notice( string $plugin_file ): void {
 	if ( plugin_basename( __FILE__ ) !== $plugin_file ) {
 		return;
 	}
