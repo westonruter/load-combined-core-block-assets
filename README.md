@@ -4,7 +4,7 @@ Workaround for sites experiencing issues with WordPress 6.9's changed default be
 
 **Contributors:** [westonruter](https://profile.wordpress.org/westonruter)  
 **Tags:**         performance  
-**Tested up to:** 7.0  
+**Tested up to:** 7.1  
 **Stable tag:**   1.1.0  
 **License:**      [GPLv2 or later](https://www.gnu.org/licenses/old-licenses/gpl-2.0.html)
 
