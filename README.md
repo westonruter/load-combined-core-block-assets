@@ -18,6 +18,10 @@ This is a workaround for sites experiencing any issues with the ability introduc
 * [r61554](https://core.trac.wordpress.org/changeset/61554): Script Loader: Preserve original CSS cascade for classic themes when hoisting late-printed styles.
 * [r61945](https://core.trac.wordpress.org/changeset/61945): Script Loader: Refine hoisted stylesheet ordering to preserve original CSS cascade in classic themes.
 
+The current known outstanding issue is:
+
+* [#65272](https://core.trac.wordpress.org/ticket/65272): Blocks' opinionated styles are not loading on demand in classic themes
+
 If running a classic theme (i.e. not a block theme), this plugin filters `should_load_separate_core_block_assets` to be `false`. This has the effect of reverting a change introduced in 6.9 where classic themes now load separate core block assets on demand by default.
 
 Note that this plugin should be considered temporary until any issues are resolved in 7.0. At any time, you can test whether any issues remain by adding `?should_load_separate_core_block_assets=true` to any frontend URL; this restores the default behavior in WP 6.9. 
